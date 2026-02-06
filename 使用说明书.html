@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collector 技能使用说明书</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #e74c3c;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+            overflow-x: auto;
+        }
+        .highlight-box {
+            background-color: #e8f4fd;
+            border: 1px solid #b6d4fe;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Collector 技能使用说明书</h1>
+        
+        <div class="highlight-box">
+            <strong>核心功能：</strong> 这是一个自动化的网页内容采集工具。它能智能识别网页中的文章和高清图片，提供交互式选择界面，并自动完成下载、去重和分类整理。
+        </div>
+
+        <h2>1. 功能亮点</h2>
+        <ul>
+            <li><strong>智能检索</strong>：自动识别网页中的文章链接和图片画廊。</li>
+            <li><strong>交互选择</strong>：不用盲目下载全站，您可以勾选自己感兴趣的内容。</li>
+            <li><strong>高清优先</strong>：自动解析网页代码，找到图片的最大分辨率版本下载。</li>
+            <li><strong>智能去重</strong>：通过计算图片内容的哈希值（SHA-256），确保不会重复下载相同的图片。</li>
+            <li><strong>文章存档</strong>：将网页文章转换为干净、无广告的 HTML 格式保存。</li>
+            <li><strong>自动分类</strong>：下载内容按 <code>域名/日期</code> 自动归档。</li>
+        </ul>
+
+        <h2>2. 安装位置</h2>
+        <p>技能已安装至：<code>E:\OpenCode\skill image-collector</code></p>
+
+        <h2>3. 如何使用</h2>
+
+        <h3>方式一：交互模式（推荐）</h3>
+        <p>直接运行命令，然后根据提示输入网址：</p>
+        <pre><code>/image-collector</code></pre>
+        <p>或</p>
+        <pre><code>npm start</code></pre>
+
+        <h3>方式二：直接指定网址</h3>
+        <pre><code>/image-collector https://www.example.com/gallery</code></pre>
+
+        <h2>4. 使用流程演示</h2>
+        <ol>
+            <li><strong>启动</strong>：运行命令。</li>
+            <li><strong>输入</strong>：粘贴您想采集的网址。</li>
+            <li><strong>分析</strong>：工具会自动打开浏览器（无头模式）扫描页面。</li>
+            <li><strong>选择</strong>：终端会列出发现的文章或图片集，使用 <code>空格键</code> 勾选，<code>回车键</code> 确认。</li>
+            <li><strong>下载</strong>：工具自动处理下载、查重和保存。</li>
+            <li><strong>查看</strong>：文件保存在 <code>E:\OpenCode\skill image-collector\downloads</code> 目录下。</li>
+        </ol>
+
+        <h2>5. 常见问题</h2>
+        <p><strong>Q: 下载失败提示 Puppeteer 错误？</strong><br>
+        A: 这通常是因为 Chrome 浏览器未正确安装。您可以尝试手动运行 <code>npm install</code> 或设置环境变量跳过下载。</p>
+
+        <p><strong>Q: 图片为什么没有下载？</strong><br>
+        A: 可能是因为触发了去重机制（该图片已存在），或者图片链接受防盗链保护。</p>
+
+        <div class="footer">
+            <p>本文档由 OpenCode 助手生成。</p>
+        </div>
+    </div>
+</body>
+</html>
